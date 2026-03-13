@@ -100,6 +100,11 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL = "users.User"
 
+AUTHENTICATION_BACKENDS = [
+    "axes.backends.AxesStandaloneBackend",
+    "django.contrib.auth.backends.ModelBackend",
+]
+
 LANGUAGE_CODE = "ru"
 TIME_ZONE = "Europe/Chisinau"
 USE_I18N = True
@@ -179,11 +184,13 @@ SIMPLE_JWT = {
     "USER_ID_CLAIM": "user_id",
 }
 
-AXES_HANDLER = "axes.handlers.django.AxesdjangoHandler"
+# AXES configuration - disabled for local development
+AXES_ENABLED = False
+
+AXES_HANDLER = "axes.handlers.django.AxesStandaloneHandler"
 AXES_LOCKOUT_ATTEMPTS = 5
 AXES_COOLOFF_TIME = 15
 AXES_RESET_COOLOFF_ON_FAILURE = True
-AXES_USE_USER_AGENT = False
 
 CELERY_BROKER_URL = env("CELERY_BROKER_URL", default="redis://localhost:6379/0")
 CELERY_RESULT_BACKEND = env("CELERY_RESULT_BACKEND", default="redis://localhost:6379/0")

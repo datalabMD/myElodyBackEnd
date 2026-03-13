@@ -1,0 +1,8 @@
+default_app_config = "apps.loyalty.apps.LoyaltyConfig"
+default_app_config = "apps.transactions.apps.TransactionsConfig"
+default_app_config = "apps.promotions.apps.PromotionsConfig"
+default_app_config = "apps.stores.apps.StoresConfig"
+default_app_config = "apps.notifications.apps.NotificationsConfig"
+default_app_config = "apps.surveys.apps.SurveysConfig"
+default_app_config = "apps.settings.apps.SettingsConfig"
+default_app_config = "apps.webhooks.apps.WebhooksConfig"

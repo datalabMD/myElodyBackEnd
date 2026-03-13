@@ -42,6 +42,7 @@ class User(AbstractBaseUser, UUIDModel, TimeStampedModel):
     )
     is_active = models.BooleanField(default=True, verbose_name="Активен")
     is_staff = models.BooleanField(default=False, verbose_name="Персонал")
+    is_superuser = models.BooleanField(default=False, verbose_name="Суперпользователь")
 
     objects = UserManager()
 

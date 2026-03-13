@@ -7,9 +7,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from apps.api.v1 import api as api_v1
+
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("api/v1/", include("apps.api.v1.urls")),
+    path("api/v1/", api_v1.urls),
     path("health/", include("health_check.urls")),
 ]
 

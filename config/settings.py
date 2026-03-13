@@ -13,7 +13,7 @@ SECRET_KEY = env("DJANGO_SECRET_KEY", default="django-insecure-change-me-in-prod
 
 DEBUG = env.bool("DEBUG", default=True)
 
-ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["localhost", "127.0.0.1", "0.0.0.0"])
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS", default=["localhost", "127.0.0.1", "0.0.0.0", "testserver"])
 
 INSTALLED_APPS = [
     "django.contrib.admin",

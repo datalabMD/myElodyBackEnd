@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.core.validators import RegexValidator
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.db import models
 
 from core.models import UUIDModel, TimeStampedModel
@@ -27,7 +27,7 @@ phone_validator = RegexValidator(
 )
 
 
-class User(AbstractBaseUser, UUIDModel, TimeStampedModel):
+class User(AbstractBaseUser, PermissionsMixin, UUIDModel, TimeStampedModel):
     phone = models.CharField(
         max_length=16,
         unique=True,
